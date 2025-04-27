@@ -40,7 +40,7 @@ public final class Knockback extends JavaPlugin implements Listener {
 
       double knockbackReduction = Math.min(0.60, blastProtectionLevel * 0.15);
 
-      Vector direction = livingEntity.getEyeLocation().toVector().subtract(explosionLoc.toVector());
+      Vector direction = livingEntity.getLocation().toVector().subtract(explosionLoc.toVector());
       double distance = direction.length();
       if (distance == 0) continue;
 
