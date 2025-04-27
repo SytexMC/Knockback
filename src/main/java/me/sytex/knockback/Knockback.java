@@ -40,19 +40,23 @@ public final class Knockback extends JavaPlugin implements Listener {
 
       double knockbackReduction = Math.min(0.60, blastProtectionLevel * 0.15);
 
-      Vector direction = livingEntity.getLocation().toVector().subtract(explosionLoc.toVector());
+      Vector direction = livingEntity.getEyeLocation().toVector().subtract(explosionLoc.toVector());
       double distance = direction.length();
-      if (distance == 0) {
-        continue;
-      }
+      if (distance == 0) continue;
 
       direction.normalize();
 
       double strength = 1.0 - (distance / 10.0);
       strength = Math.max(0, strength);
 
-      Vector knockback = direction.multiply(strength * (1.0 - knockbackReduction));
+      double yDiff = explosionLoc.getY() - livingEntity.getLocation().getY();
+      double verticalFactor = 1.0;
 
+      if (yDiff > 0) {
+        verticalFactor = Math.max(0.0, 1.0 - (yDiff / 1.5));
+      }
+
+      Vector knockback = direction.multiply(strength * (1.0 - knockbackReduction) * verticalFactor);
       livingEntity.setVelocity(knockback);
     }
   }
