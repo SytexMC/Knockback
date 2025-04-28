@@ -1,5 +1,5 @@
 name: Knockback
-version: '1.0.0'
+version: '1.0.1'
 main: me.sytex.knockback.Knockback
 api-version: '1.21'
 authors: [SytexMC]
