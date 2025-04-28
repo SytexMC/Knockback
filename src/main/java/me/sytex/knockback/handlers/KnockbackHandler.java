@@ -56,19 +56,20 @@ public class KnockbackHandler {
           toEntity.multiply(1.0 / distance);
         }
 
-        double strength = Math.max(0, 1.5 - (distance / 8.0));
+        double strength = Math.max(0, 1.0 - (distance / 8.0));
 
         double yDiff = explosionLocation.getY() - entityLocation.getY();
         double verticalFactorFar = (yDiff > 0)
-            ? Math.max(0.0, 1.0 - (yDiff / 1.5))
-            : Math.min(1.5, 1.0 + (Math.abs(yDiff) / 2.0));
-        double verticalFactorClose = 1.0 + (1.0 - distance);
+            ? Math.max(0.0, 0.7 - (yDiff / 2.0))
+            : Math.min(1.2, 1.0 + (Math.abs(yDiff) / 2.0));
+
+        double verticalFactorClose = Math.min(1.2, 1.0 + (1.0 - distance));
 
         double weight = Math.min(1.0, distance);
         double verticalFactor = (1.0 - weight) * verticalFactorClose + weight * verticalFactorFar;
 
-        if (distance < 1.5) {
-          verticalFactor += (1.5 - distance) * 0.4;
+        if (distance < 1.0) {
+          verticalFactor += (1.0 - distance) * 0.3;
         }
 
         Vector knockback = toEntity.multiply(strength * (1.0 - knockbackReduction) * verticalFactor);
