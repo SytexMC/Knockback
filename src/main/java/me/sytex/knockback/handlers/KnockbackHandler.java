@@ -12,7 +12,7 @@ public class KnockbackHandler {
 
   public static void handle(Location location) {
     for (LivingEntity livingEntity : location.getNearbyLivingEntities(12)) {
-      AttributeInstance attributeInstance = livingEntity.getAttribute(Attribute.GENERIC_EXPLOSION_KNOCKBACK_RESISTANCE);
+      AttributeInstance attributeInstance = livingEntity.getAttribute(Attribute.EXPLOSION_KNOCKBACK_RESISTANCE);
 
       if (attributeInstance == null) continue;
 
