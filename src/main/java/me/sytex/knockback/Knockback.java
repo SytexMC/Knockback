@@ -4,10 +4,9 @@ import static org.bukkit.Bukkit.getPluginManager;
 
 import me.sytex.knockback.listeners.BlockExplodeListener;
 import me.sytex.knockback.listeners.EntityExplodeListener;
-import org.bukkit.event.Listener;
 import org.bukkit.plugin.java.JavaPlugin;
 
-public final class Knockback extends JavaPlugin implements Listener {
+public final class Knockback extends JavaPlugin {
 
   @Override
   public void onEnable() {
