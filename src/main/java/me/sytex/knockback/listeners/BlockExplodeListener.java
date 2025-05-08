@@ -8,7 +8,7 @@ import org.bukkit.event.block.BlockExplodeEvent;
 
 public class BlockExplodeListener implements Listener {
 
-  @EventHandler
+  @EventHandler(ignoreCancelled = true)
   public void onBlockExplode(BlockExplodeEvent event) {
     if (event.getExplodedBlockState().getType() != Material.RESPAWN_ANCHOR) return;
 
