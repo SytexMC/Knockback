@@ -1,20 +1,14 @@
-# Knockback
+<div align="center">
+  <img alt="Title" src="https://cdn.modrinth.com/data/cached_images/a9015df73b8a31eb2e49bdc6f982d044d1f9bd2c_0.webp">
+  
+  <a target="_blank" href="https://adoptium.net/en-GB/temurin/releases/"><img alt="Badge" src="https://img.shields.io/badge/Java-21%2B-%20%23e74c3c%20?style=for-the-badge"></a>
+  <a target="_blank" href="https://papermc.io/downloads/paper"><img alt="Badge" src="https://img.shields.io/badge/Minecraft-1.21%2B-%20%23e74c3c%20?style=for-the-badge"></a>
+  <a target="_blank" href="https://discord.gg/8YRdnf5V42"><img alt="Discord" src="https://img.shields.io/discord/1370011451451772938?style=for-the-badge&label=Discord&color=%237289DA"></a>
+  <a target="_blank" href="https://mit-license.org/"><img alt="Badge" src="https://img.shields.io/badge/License-MIT-%2327ae60?style=for-the-badge"></a>
 
-Minecraft 1.21 introduced a significant change to Blast Protection mechanics, removing the 60% cap on knockback resistance. This change allows knockback resistance to exceed 100%, which effectively breaks crystal PvP. As a result, many PvP-based servers have been forced to stick with version 1.20.6.
-
-This plugin aims to restore pre-1.21 blast protection mechanics for end crystals and respawn anchors by maintaining the original 60% knockback reduction cap, allowing you to upgrade your server to 1.21+ without compromising crystal PvP.
-## Installation
-
-1. Download the latest release from the [releases page](https://github.com/SytexMC/Knockback/releases)
-2. Place the `.jar` file in your server's `plugins` folder
-3. Restart your server
-
-## Support
-
-If you encounter any issues or have questions, please:
-1. Open an [issue](https://github.com/SytexMC/Knockback/issues) on our GitHub repository.
-2. Provide as much detail as possible about your server setup and the problem you're experiencing.
-
-## License
-
-This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.
+  <p>
+    Restores pre-1.21 blast protection mechanics for end crystals and respawn anchors,
+    <br>by maintaining the 60% knockback resistance cap that was removed in  1.21 - [<a target="_blank" href="https://www.minecraft.net/zh-hant/article/minecraft-1-21-pre-release-4">Link</a>].
+    <br>Allows you to upgrade to newer versions without compromising crystal PvP.
+  </p>
+</div>
