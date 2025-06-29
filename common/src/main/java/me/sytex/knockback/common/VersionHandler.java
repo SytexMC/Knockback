@@ -21,7 +21,8 @@
 package me.sytex.knockback.common;
 
 import org.bukkit.Location;
+import org.jetbrains.annotations.NotNull;
 
 public interface VersionHandler {
-  void handle(Location location);
+  void handle(@NotNull Location location);
 }
