@@ -12,4 +12,4 @@ tasks {
     processResources { filteringCharset = Charsets.UTF_8.name() }
 }
 
-dependencies { compileOnly("io.papermc.paper:paper-api:1.21-R0.1-SNAPSHOT") }
+dependencies { compileOnly("io.papermc.paper:paper-api:1.21.6-R0.1-SNAPSHOT") }
