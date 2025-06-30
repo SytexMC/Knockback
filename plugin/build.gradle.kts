@@ -32,7 +32,7 @@ tasks {
 
 dependencies {
     compileOnly("io.papermc.paper:paper-api:1.21.6-R0.1-SNAPSHOT")
-    listOf(":common", ":api:1_21", ":api:1_21_3").forEach { implementation(project(it)) }
+    listOf(":common", ":ver:1_21", ":ver:1_21_3").forEach { implementation(project(it)) }
 }
 
 paper {
