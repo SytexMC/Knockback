@@ -20,22 +20,21 @@
 
 package me.sytex.knockback;
 
-import static org.bukkit.Bukkit.getPluginManager;
-
 import me.sytex.knockback.common.VersionHandler;
 import me.sytex.knockback.listeners.BlockExplodeListener;
 import me.sytex.knockback.listeners.EntityExplodeListener;
 import org.bukkit.plugin.java.JavaPlugin;
+import org.bukkit.Bukkit;
 
 public class Knockback extends JavaPlugin {
 
-  public static VersionHandler handler;
+  public static VersionHandler versionHandler;
 
   @Override
   public void onEnable() {
-    handler = VersionSupport.initialize();
+    versionHandler = VersionSupport.initialize();
 
-    getPluginManager().registerEvents(new BlockExplodeListener(), this);
-    getPluginManager().registerEvents(new EntityExplodeListener(), this);
+    Bukkit.getPluginManager().registerEvents(new BlockExplodeListener(), this);
+    Bukkit.getPluginManager().registerEvents(new EntityExplodeListener(), this);
   }
 }

@@ -20,9 +20,10 @@
 
 package me.sytex.knockback.common;
 
-import org.bukkit.Location;
+import org.bukkit.attribute.AttributeInstance;
+import org.bukkit.entity.LivingEntity;
 import org.jetbrains.annotations.NotNull;
 
 public interface VersionHandler {
-  void handle(@NotNull Location location);
+  AttributeInstance getAttributeInstance(@NotNull LivingEntity entity);
 }

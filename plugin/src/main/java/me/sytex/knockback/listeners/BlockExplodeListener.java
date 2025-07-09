@@ -20,8 +20,7 @@
 
 package me.sytex.knockback.listeners;
 
-import static me.sytex.knockback.Knockback.handler;
-
+import me.sytex.knockback.handlers.ExplosionHandler;
 import org.bukkit.Material;
 import org.bukkit.event.EventHandler;
 import org.bukkit.event.Listener;
@@ -34,6 +33,6 @@ public class BlockExplodeListener implements Listener {
   public void onBlockExplode(@NotNull BlockExplodeEvent event) {
     if (event.getExplodedBlockState().getType() != Material.RESPAWN_ANCHOR) return;
 
-    handler.handle(event.getBlock().getLocation());
+    ExplosionHandler.handle(event.getBlock().getLocation());
   }
 }

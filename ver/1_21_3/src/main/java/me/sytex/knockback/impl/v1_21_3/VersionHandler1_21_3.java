@@ -20,32 +20,16 @@
 
 package me.sytex.knockback.impl.v1_21_3;
 
-import java.util.Collection;
 import me.sytex.knockback.common.VersionHandler;
-import org.bukkit.Location;
 import org.bukkit.attribute.Attribute;
 import org.bukkit.attribute.AttributeInstance;
-import org.bukkit.attribute.AttributeModifier;
 import org.bukkit.entity.LivingEntity;
 import org.jetbrains.annotations.NotNull;
 
 public class VersionHandler1_21_3 implements VersionHandler {
 
   @Override
-  public void handle(@NotNull Location location) {
-    for (LivingEntity livingEntity : location.getNearbyLivingEntities(12)) {
-      AttributeInstance attributeInstance = livingEntity.getAttribute(Attribute.EXPLOSION_KNOCKBACK_RESISTANCE);
-
-      if (attributeInstance == null) continue;
-
-      Collection<AttributeModifier> modifiers = attributeInstance.getModifiers();
-
-      if (modifiers.isEmpty()) continue;
-
-      double value = modifiers.stream().mapToDouble(AttributeModifier::getAmount).sum();
-      double reduction = value > 0.6 ? 0.6 - value : 0.0;
-
-      attributeInstance.setBaseValue(reduction);
-    }
+  public AttributeInstance getAttributeInstance(@NotNull LivingEntity entity) {
+    return entity.getAttribute(Attribute.EXPLOSION_KNOCKBACK_RESISTANCE);
   }
 }

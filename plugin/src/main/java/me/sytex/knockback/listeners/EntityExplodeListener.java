@@ -20,8 +20,7 @@
 
 package me.sytex.knockback.listeners;
 
-import static me.sytex.knockback.Knockback.handler;
-
+import me.sytex.knockback.handlers.ExplosionHandler;
 import org.bukkit.entity.EntityType;
 import org.bukkit.event.EventHandler;
 import org.bukkit.event.Listener;
@@ -34,6 +33,6 @@ public class EntityExplodeListener implements Listener {
   public void onEntityExplode(@NotNull ExplosionPrimeEvent event) {
     if (event.getEntity().getType() != EntityType.END_CRYSTAL) return;
 
-    handler.handle(event.getEntity().getLocation());
+    ExplosionHandler.handle(event.getEntity().getLocation());
   }
 }
