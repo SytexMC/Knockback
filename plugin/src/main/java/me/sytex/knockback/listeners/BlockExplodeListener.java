@@ -22,6 +22,7 @@ package me.sytex.knockback.listeners;
 
 import me.sytex.knockback.handlers.ExplosionHandler;
 import org.bukkit.Material;
+import org.bukkit.Tag;
 import org.bukkit.event.EventHandler;
 import org.bukkit.event.Listener;
 import org.bukkit.event.block.BlockExplodeEvent;
@@ -31,7 +32,9 @@ public class BlockExplodeListener implements Listener {
 
   @EventHandler(ignoreCancelled = true)
   public void onBlockExplode(@NotNull BlockExplodeEvent event) {
-    if (event.getExplodedBlockState().getType() != Material.RESPAWN_ANCHOR) return;
+    Material material = event.getExplodedBlockState().getType();
+
+    if (material != Material.RESPAWN_ANCHOR && !Tag.BEDS.isTagged(material)) return;
 
     ExplosionHandler.handle(event.getBlock().getLocation());
   }
