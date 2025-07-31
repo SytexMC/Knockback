@@ -25,6 +25,8 @@ public class ExplosionHandler {
 
       double reduction = roundedValue > 0.6 ? 0.6 - roundedValue : 0.0;
 
+      if (reduction == 0.0) continue;
+
       double prevBaseValue = attributeInstance.getBaseValue();
 
       attributeInstance.setBaseValue(reduction);
