@@ -1,6 +1,6 @@
 allprojects {
     group = "me.sytex"
-    version = "3.1.2"
+    version = "3.1.3"
 
     ext { set("javaToolchainVersion", 21) }
 
