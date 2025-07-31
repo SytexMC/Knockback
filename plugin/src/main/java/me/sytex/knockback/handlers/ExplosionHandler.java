@@ -21,7 +21,8 @@ public class ExplosionHandler {
       if (modifiers.isEmpty()) continue;
 
       double value = modifiers.stream().mapToDouble(AttributeModifier::getAmount).sum();
-      double reduction = value > 0.6 ? 0.6 - value : 0.0;
+      double roundedValue = Math.round(value * 100000d) / 100000d;
+      double reduction = roundedValue > 0.6 ? 0.6 - roundedValue : 0.0;
 
       attributeInstance.setBaseValue(reduction);
     }
