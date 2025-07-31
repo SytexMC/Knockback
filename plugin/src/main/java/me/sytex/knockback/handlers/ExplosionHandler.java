@@ -22,9 +22,14 @@ public class ExplosionHandler {
 
       double value = modifiers.stream().mapToDouble(AttributeModifier::getAmount).sum();
       double roundedValue = Math.round(value * 100000d) / 100000d;
+
       double reduction = roundedValue > 0.6 ? 0.6 - roundedValue : 0.0;
 
+      double prevBaseValue = attributeInstance.getBaseValue();
+
       attributeInstance.setBaseValue(reduction);
+
+      Knockback.scheduler.runTaskLater(Knockback.plugin, () -> attributeInstance.setBaseValue(prevBaseValue), 1);
     }
   }
 }

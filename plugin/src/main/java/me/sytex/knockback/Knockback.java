@@ -25,14 +25,19 @@ import me.sytex.knockback.listeners.BlockExplodeListener;
 import me.sytex.knockback.listeners.EntityExplodeListener;
 import org.bukkit.plugin.java.JavaPlugin;
 import org.bukkit.Bukkit;
+import org.bukkit.scheduler.BukkitScheduler;
 
 public class Knockback extends JavaPlugin {
 
   public static VersionHandler versionHandler;
+  public static BukkitScheduler scheduler;
+  public static Knockback plugin;
 
   @Override
   public void onEnable() {
     versionHandler = VersionSupport.initialize();
+    scheduler = Bukkit.getServer().getScheduler();
+    plugin = this;
 
     Bukkit.getPluginManager().registerEvents(new BlockExplodeListener(), this);
     Bukkit.getPluginManager().registerEvents(new EntityExplodeListener(), this);
