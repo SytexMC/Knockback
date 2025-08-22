@@ -23,21 +23,21 @@ package me.sytex.knockback;
 import me.sytex.knockback.common.VersionHandler;
 import me.sytex.knockback.listeners.BlockExplodeListener;
 import me.sytex.knockback.listeners.EntityExplodeListener;
+import org.bukkit.Server;
 import org.bukkit.plugin.java.JavaPlugin;
 import org.bukkit.Bukkit;
-import org.bukkit.scheduler.BukkitScheduler;
 
 public class Knockback extends JavaPlugin {
 
   public static VersionHandler versionHandler;
-  public static BukkitScheduler scheduler;
   public static Knockback plugin;
+  public static Server server;
 
   @Override
   public void onEnable() {
     versionHandler = VersionSupport.initialize();
-    scheduler = Bukkit.getServer().getScheduler();
     plugin = this;
+    server = this.getServer();
 
     Bukkit.getPluginManager().registerEvents(new BlockExplodeListener(), this);
     Bukkit.getPluginManager().registerEvents(new EntityExplodeListener(), this);

@@ -40,6 +40,8 @@ paper {
 
     apiVersion = "1.21"
 
+    foliaSupported = true
+
     name = "Knockback"
     description = "Restores pre-1.21 blast protection mechanics for end crystals and respawn anchors by maintaining the original 60% knockback reduction cap. "
     version = project.version as String

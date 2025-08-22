@@ -51,7 +51,7 @@ public class ExplosionHandler {
 
       attributeInstance.setBaseValue(reduction);
 
-      Knockback.scheduler.runTaskLater(Knockback.plugin, () -> attributeInstance.setBaseValue(prevBaseValue), 1);
+      livingEntity.getScheduler().runDelayed(Knockback.plugin, scheduledTask -> attributeInstance.setBaseValue(prevBaseValue), null, 1);
     }
   }
 }
