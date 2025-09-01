@@ -1,7 +1,7 @@
 plugins {
     `java-library`
     id("xyz.jpenilla.run-paper") version "2.3.1"
-    id("de.eldoria.plugin-yml.paper") version "0.7.1"
+    id("de.eldoria.plugin-yml.paper") version "0.8.0"
     id("com.github.johnrengelman.shadow") version "8.1.1"
 }
 
